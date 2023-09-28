@@ -27,6 +27,49 @@ public class Main {
         System.out.println(p);
 
         System.out.println((new Random()).nextInt(10)); // a number 0-9
+
+        double apple = Double.parseDouble("200.99");
+        System.out.println((byte) apple); // -56
+        System.out.println((int) apple); // 200
+        System.out.println(apple); // 200.99
+
+        Double apple2 = Double.valueOf("200.99");
+        System.out.println(apple2.byteValue()); // -56
+        System.out.println(apple2.intValue()); // 200
+        System.out.println(apple2.doubleValue()); // 200.99
+
+        //Defining text blocks - added with java 15
+        String eyeTest = "\"Java Study Guide\"\n by Scott & Jeanne";
+        System.out.println(eyeTest);
+
+        String pyramid = """
+            * \
+           * *
+          * * *
+          """; //In this case \ omits a new line => *  * * will be on the same line
+        System.out.print(pyramid);
+        //String block = """doe""";//Does not compile because we don't have a new line after the """
+        String block0 = """
+                doe
+                """; //Valid block
+        String block1 = """
+                doe"""; //Valid block (see difference between this and block0)
+        String block2 = """
+                doe \n
+                deer
+                """; // block2 has 4 line because the last 3 """ are on a different line (1 line doe, 1 empty line, 1 line with deer, 1 empty line)
+        System.out.println(block2);
+
+        String block = """
+            "doe\"\"\"
+            \"deer\"""
+            """;
+        System.out.println(block);
+
+        //String class = "";//Invalid name because class is a reserved keyword
+        String Class = "";//Works because java is case-sensitive ... but it's not ok to use reserved keywords even if change the case
+        //String _ = "";//Invalid
+        String _variableName = "";//Valid
     }
 }
 //See page 7 from chapter 1
