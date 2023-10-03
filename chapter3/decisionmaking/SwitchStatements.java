@@ -135,4 +135,24 @@ public class SwitchStatements {
                 yield "Test";
         };
     }
+
+    String getWeatherV3(Season value) {
+        return switch (value) {
+            case WINTER -> {
+                yield "Cooled"; //We can also do something like this but yield is redundant
+            }
+            case SPRING -> {
+                yield "Rainy";
+            }
+            case SUMMER -> {
+                yield "Hot";
+            }
+            case FALL -> {
+                yield "Warm";
+            }
+            //If we add a new value in our enum then we will get an error if we miss the default, and then we will need to modify the switch statement
+            //we can't use a value that is not in the enum
+            default -> "Test";
+        };
+    }
 }
